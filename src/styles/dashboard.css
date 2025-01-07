@@ -1,0 +1,75 @@
+/* Dashboard Grid Layout */
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top, width, height;
+  margin-bottom: 0 !important;
+}
+
+.react-grid-item.cssTransforms {
+  transition-property: transform, width, height;
+}
+
+.react-grid-item.resizing {
+  z-index: 1;
+  will-change: width, height;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: rgba(23, 23, 23, 0.1);
+  border: 2px dashed #171717;
+  border-radius: 0.5rem;
+  opacity: 0.5;
+  transition-duration: 100ms;
+  z-index: 2;
+  user-select: none;
+}
+
+.dark .react-grid-item.react-grid-placeholder {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #404040;
+}
+
+/* Dashboard Widget */
+.dashboard-widget {
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-widget:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.dark .dashboard-widget:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Widget Header */
+.dashboard-widget-header {
+  background-color: #171717;
+  border-bottom: 1px solid #404040;
+  padding: 0.5rem;
+  cursor: move;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .react-grid-item {
+    margin-bottom: 1rem !important;
+  }
+  
+  .dashboard-widget {
+    min-height: 200px;
+  }
+}
